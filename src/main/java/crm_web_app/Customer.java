@@ -1,19 +1,13 @@
 package crm_web_app;
 
-public class Customer {
-    private String name;
+public class Customer extends NewCustomer {
+    private int id;
 
-    public void setName(String name){
-        this.name = name;
-    }
-    public String getName(){
-        return name;
+    public int getId() {
+        return id;
     }
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "name='" + name + '\'' +
-                '}';
+    public void setId(int id) {
+        this.id = id;
     }
 }
