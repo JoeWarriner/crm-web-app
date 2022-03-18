@@ -8,11 +8,11 @@
 		<version>2.6.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
+	<groupId>crm</groupId>
 	<artifactId>crm_web_app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>crm_web_app</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Learning project for Spring</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
