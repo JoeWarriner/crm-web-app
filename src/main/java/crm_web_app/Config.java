@@ -13,4 +13,9 @@ public class Config {
         return builder.build();
     }
 
+    @Bean
+    public CustomerAPIConsumer apiConsumer(){
+        return new CustomerAPIConsumer();
+    }
+
 }

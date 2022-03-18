@@ -15,7 +15,7 @@ public class NewCustomerController {
 
 
     @Autowired
-    RestTemplate restTemplate;
+    CustomerAPIConsumer apiConsumer;
 
     @GetMapping("/customer/new")
     public String newCustomerForm(Model model){
@@ -25,11 +25,9 @@ public class NewCustomerController {
 
     @PostMapping("/customer/new")
     public String greetingSubmit(@ModelAttribute NewCustomer customer, Model model){
+        String id = apiConsumer.postCustomer(customer);
 
-        String mystring = restTemplate.postForObject(
-                    "http://localhost:8080/customer", customer, String.class);
-
-        model.addAttribute("customerid", mystring);
+        model.addAttribute("customerid", id);
 
         return "result";
     }
