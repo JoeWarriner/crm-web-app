@@ -12,7 +12,16 @@ public class CustomerAPIConsumer {
 
         String id = restTemplate.postForObject(
                 "http://localhost:8080/customer", customer, String.class);
+        System.out.println(id);
 
         return id;
+    }
+
+    public Customer getCustomer(String id){
+
+        Customer customer = restTemplate.getForObject(
+                String.format("http://localhost:8080/customer?id=%s", id), Customer.class);
+
+        return customer;
     }
 }

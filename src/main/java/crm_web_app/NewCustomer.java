@@ -2,6 +2,9 @@ package crm_web_app;
 
 public class NewCustomer {
     private String name;
+    private String organisation;
+    private String email;
+    private String phoneNumber;
 
     public void setName(String name){
         this.name = name;
@@ -9,6 +12,30 @@ public class NewCustomer {
 
     public String getName(){
         return name;
+    }
+
+    public String getOrganisation() {
+        return organisation;
+    }
+
+    public void setOrganisation(String organisation) {
+        this.organisation = organisation;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override

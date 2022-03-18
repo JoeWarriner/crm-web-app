@@ -8,8 +8,12 @@
 <body>
     <h1>Form</h1>
     <form action="#" th:action="@{/customer/new}" th:object="${newcustomer}" method="post">
-        <p>Name: <input type="text" th:field="*{name}"</p>
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" />></p>
+
+        <p>Name: <input type="text" th:field="*{name}"></p>
+        <p>Organisation: <input type="text" th:field="*{organisation}"></p>
+        <p>Phone Number: <input type="text" th:field="*{phoneNumber}"></p>
+        <p>Email: <input type="text" th:field="*{email}"></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
     </form>
 
 </body>

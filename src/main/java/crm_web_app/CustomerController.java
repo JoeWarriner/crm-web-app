@@ -1,17 +1,16 @@
 package crm_web_app;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class NewCustomerController {
+public class CustomerController {
 
 
     @Autowired
@@ -24,13 +23,19 @@ public class NewCustomerController {
     }
 
     @PostMapping("/customer/new")
-    public String greetingSubmit(@ModelAttribute NewCustomer customer, Model model){
+    public ModelAndView customerSubmit(@ModelAttribute NewCustomer customer, Model model){
         String id = apiConsumer.postCustomer(customer);
-
-        model.addAttribute("customerid", id);
-
-        return "result";
+        return new ModelAndView(String.format("redirect:/customer?id=%s",id));
     }
+
+    @GetMapping("/customer")
+    public String displayCustomer(@RequestParam String id, Model model){
+        Customer customer = apiConsumer.getCustomer(id);
+        System.out.println(customer.getId());
+        model.addAttribute("customer", customer);
+        return "customerpage";
+    }
+
 
 
 
